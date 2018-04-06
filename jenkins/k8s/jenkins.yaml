@@ -58,8 +58,9 @@ spec:
             memory: 1500Mi
       volumes:
       - name: jenkins-home
-        gcePersistentDisk:
-          pdName: jenkins-home
-          fsType: ext4
-          partition: 1
+        hostPath:
+        # directory location on host
+          path: /home/user/.jenkins
+          # this field is optional
+          type: DirectoryOrCreate      
 # [END jenkins_deployment]
