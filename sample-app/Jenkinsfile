@@ -7,6 +7,8 @@ node {
   checkout scm
 
   stage 'Build image'
+  echo "==========================================> USER : ${USER}"
+  sh "pwd" 
   sh("docker build -t ${imageTag} .")
 
   stage 'Run Go tests'
