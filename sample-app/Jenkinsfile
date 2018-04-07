@@ -7,7 +7,8 @@ node {
   checkout scm
 
   stage 'Build image'
-  echo "==========================================> USER : ${USER}"
+  echo "==========================================>"
+  sh "echo ${USER}"
   sh "pwd" 
   sh("docker build -t ${imageTag} .")
 
